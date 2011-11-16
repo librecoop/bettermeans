@@ -20,6 +20,11 @@ class HomeController < ApplicationController
     @projects = Project.all_public.active
     render :layout => false, :content_type => 'text/plain'
   end
+
+  def language
+    session[:locale] = params[:lang]
+    redirect_to request.env['HTTP_REFERER']
+  end
   
 end
 

@@ -43,7 +43,8 @@ class ApplicationController < ActionController::Base
   def set_user_ip
     session[:client_ip] = request.headers['X-Real-Ip'] unless session[:client_ip]
   end
-  
+
+   
   def user_setup
     # Check the settings cache for each request
     Setting.check_cache
@@ -119,6 +120,9 @@ class ApplicationController < ActionController::Base
     if User.current.logged?
       lang = find_language(User.current.language)
     end
+    if session[:locale]
+      lang = session[:locale]
+    end
     # if lang.nil? && request.env['HTTP_ACCEPT_LANGUAGE']
     #   accept_lang = parse_qvalues(request.env['HTTP_ACCEPT_LANGUAGE']).first.downcase
     #   if !accept_lang.blank?
@@ -128,7 +132,7 @@ class ApplicationController < ActionController::Base
     lang ||= Setting.default_language
     set_language_if_valid(lang)
   end
-  
+
   def data_admin_logged_in?
     return true if User.current == User.find_by_login("shereef") || User.current == User.find_by_login("adelegb") || User.current == User.find_by_login("crabari")
     return false
