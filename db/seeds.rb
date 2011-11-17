@@ -16,16 +16,17 @@ trackers = Tracker.create([
 puts "IssueStatus..."
 IssueStatus.delete_all
 issue_statuses = IssueStatus.create([
-  { :position => 3, :name => "Open", :is_default => false, :default_done_ratio => nil, :is_closed => false },
-  { :position => 4, :name => "Committed", :is_default => false, :default_done_ratio => nil, :is_closed => false },
-  { :position => 7, :name => "Blocked", :is_default => false, :default_done_ratio => nil, :is_closed => false },
-  { :position => 5, :name => "Done", :is_default => false, :default_done_ratio => nil, :is_closed => true },
-  { :position => 6, :name => "Canceled", :is_default => false, :default_done_ratio => nil, :is_closed => true },
-  { :position => 1, :name => "New", :is_default => true, :default_done_ratio => nil, :is_closed => false },
-  { :position => 2, :name => "Estimate", :is_default => false, :default_done_ratio => nil, :is_closed => false },
-  { :position => 8, :name => "Archived", :is_default => false, :default_done_ratio => nil, :is_closed => true },
-  { :position => 9, :name => "Accepted", :is_default => false, :default_done_ratio => nil, :is_closed => true },
-  { :position => 10, :name => "Rejected", :is_default => false, :default_done_ratio => nil, :is_closed => false }
+  { :position => 3, :name => "default_issue_status_open", :is_default => false, :default_done_ratio => nil, :is_closed => false },
+  { :position => 4, :name => "default_issue_status_assigned", :is_default => false, :default_done_ratio => nil, :is_closed => false },
+  { :position => 11, :name => "default_issue_status_inprogress", :is_default => false, :default_done_ratio => nil, :is_closed => false },
+  { :position => 7, :name => "default_issue_status_blocked", :is_default => false, :default_done_ratio => nil, :is_closed => false },
+  { :position => 5, :name => "default_issue_status_done", :is_default => false, :default_done_ratio => nil, :is_closed => true },
+  { :position => 6, :name => "default_issue_status_canceled", :is_default => false, :default_done_ratio => nil, :is_closed => true },
+  { :position => 1, :name => "default_issue_status_new", :is_default => true, :default_done_ratio => nil, :is_closed => false },
+  { :position => 2, :name => "default_issue_status_estimate", :is_default => false, :default_done_ratio => nil, :is_closed => false },
+  { :position => 8, :name => "default_issue_status_archived", :is_default => false, :default_done_ratio => nil, :is_closed => true },
+  { :position => 9, :name => "default_issue_status_accepted", :is_default => false, :default_done_ratio => nil, :is_closed => true },
+  { :position => 10, :name => "default_issue_status_rejected", :is_default => false, :default_done_ratio => nil, :is_closed => false }
 ])
 
 puts "Enumeration..."
