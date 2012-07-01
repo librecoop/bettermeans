@@ -21,43 +21,43 @@ class IssueStatus < ActiveRecord::Base
   end
   
   def self.assigned
-    @@assigned_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_assigned)])
+    @@assigned_status ||= find(:first, :conditions =>["name=?", "default_issue_status_assigned"])
   end
   
   def self.done
-    @@done_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_done)])
+    @@done_status ||= find(:first, :conditions =>["name=?", "default_issue_status_done"])
   end
   
   def self.inprogress
-    @@inprogress_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_inprogress)])
+    @@inprogress_status ||= find(:first, :conditions =>["name=?", "default_issue_status_inprogress"])
   end
 
   def self.newstatus
-    @@newstatus_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_new)])
+    @@newstatus_status ||= find(:first, :conditions =>["name=?", "default_issue_status_new"])
   end
   
   def self.open
-    @@open_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_open)])
+    @@open_status ||= find(:first, :conditions =>["name=?", "default_issue_status_open"])
   end
   
   def self.canceled
-    @@canceled_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_canceled)])
+    @@canceled_status ||= find(:first, :conditions =>["name=?", "default_issue_status_canceled"])
   end
   
   def self.estimate
-    @@estimate_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_estimate)])
+    @@estimate_status ||= find(:first, :conditions =>["name=?", "default_issue_status_estimate"])
   end
 
   def self.accepted
-    find(:first, :conditions =>["name=?", l(:default_issue_status_accepted)])
+    find(:first, :conditions =>["name=?", "default_issue_status_accepted"])
   end
 
   def self.rejected
-    find(:first, :conditions =>["name=?", l(:default_issue_status_rejected)])
+    find(:first, :conditions =>["name=?", "default_issue_status_rejected"])
   end
 
   def self.archived
-    @@archived_status ||= find(:first, :conditions =>["name=?", l(:default_issue_status_archived)])
+    @@archived_status ||= find(:first, :conditions =>["name=?", "default_issue_status_archived"])
   end
 
 

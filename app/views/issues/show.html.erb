@@ -60,7 +60,7 @@
                 </div>
                 <div class="issue-meta-box first-box">
                     <h3 class="issue-meta-title"><%=l(:field_status)%></h3>
-                    <span class="issue-meta-content"><span id="issue_status"><%= @issue.status.name %></span></span>
+                    <span class="issue-meta-content"><span id="issue_status"><%=l @issue.status.name.to_s %></span></span>
                 </div>
                 <div class="issue-meta-box first-box">
                     <h3 class="issue-meta-title"><%= l(:label_created_time_by, :age => time_tag(@issue.created_at)) %></h3>

@@ -18,7 +18,9 @@
 <% end %>
 <span class="gt-util-separator">|</span>
 <a href="http://help.bettermeans.com" target="blank">help</a>
-
+<% form_tag({:controller => 'home', :action => 'language'},{:style=>'display: inline'}) do -%>
+  <fieldset style="display:inline"><%= select_tag 'lang', options_for_language, :onchange => 'this.form.submit();' %></fieldset>
+<% end -%>
 
 <!-- 
   menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_enterprise_plural

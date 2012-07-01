@@ -1420,6 +1420,9 @@ module ApplicationHelper
   end
   
   
+  def options_for_language
+    options_for_select(I18n.available_locales, I18n.locale)
+  end
 
   # def bar_report_tag(data, options = {}, raphael_options = {})
   #         @__raphael_report_tag_count ||= -1
